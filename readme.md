@@ -7,7 +7,7 @@ Despite tarot's strong fanbase of mysticism, at the root of it, the cards are on
 Swagger: [Tarot Card Meanings REST API](https://app.swaggerhub.com/apis/ekswagger/rws-tarot_card_api/1.0.0)
 
 ## TO DO LIST
-- [ ] Determine state management solution
+- [X] Determine state management solution
 - [ ] Create spread tool
 - [ ] Create util function to call REST API
 

@@ -1,0 +1,16 @@
+.step {
+    display: none;
+}
+
+/* TODO Make this SASSy */
+[data-step="1"] #step-one {
+    display: inline-block;
+}
+
+[data-step="2"] #step-two {
+    display: inline-block;
+}
+
+[data-step="3"] #step-three {
+    display: inline-block;
+}
