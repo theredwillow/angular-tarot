@@ -1,16 +1,33 @@
 .step {
-    display: none;
+  display: none;
 }
 
 /* TODO Make this SASSy */
 [data-step="1"] #step-one {
-    display: inline-block;
+  display: inline-block;
 }
 
 [data-step="2"] #step-two {
-    display: inline-block;
+  display: inline-block;
 }
 
 [data-step="3"] #step-three {
-    display: inline-block;
+  display: inline-block;
+}
+
+.user-input {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.input-title {
+  display: block;
+  font-weight: bold;
+}
+
+.more-info {
+  display: block;
+  font-style: italic;
 }
