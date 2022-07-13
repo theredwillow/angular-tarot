@@ -19,15 +19,30 @@
             questions like "What is my next step?", "What do I have to change?",
             and "How can I change this?".
           </span>
-          <input type="text" />
+          <input id="spread-title" type="text" placeholder="Next Step" />
         </div>
       </div>
       <div id="step-two" class="step">
         <div class="step-title">Step 2</div>
+        <div class="user-input">
+          <span class="input-title">
+            What will each card position mean in your spread?
+          </span>
+          <span class="more-info">
+            For example, a "Next Step" spread may consist of questions like
+            "What is my next step?", "What do I have to change?", and "How can I
+            change this?".
+          </span>
+          <div id="positions">
+            <div class="position"><input type="text" /><button>-</button></div>
+            <button>+ Add another card position</button>
+          </div>
+        </div>
       </div>
       <div id="step-three" class="step">
         <div class="step-title">Step 3</div>
       </div>
+      <button id="next-button" onclick="app.validate()">Next</button>
     </div>
     <script src="index.js"></script>
   </body>

@@ -1,3 +1,7 @@
+#next-button {
+  display: block;
+}
+
 .step {
   display: none;
 }
@@ -30,4 +34,8 @@
 .more-info {
   display: block;
   font-style: italic;
+}
+
+#positions {
+  margin: 5px;
 }
