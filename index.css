@@ -39,3 +39,13 @@
 #positions {
   margin: 5px;
 }
+
+.card {
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 250px;
+  width: 150px;
+  display: inline-block;
+  margin: 5px;
+  padding: 10px;
+}
