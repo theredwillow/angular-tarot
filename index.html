@@ -34,8 +34,13 @@
             change this?".
           </span>
           <div id="positions">
-            <div class="position"><input type="text" /><button>-</button></div>
-            <button>+ Add another card position</button>
+            <div class="position">
+              <input type="text" placeholder="What is my next step?" />
+              <button>-</button>
+            </div>
+            <button id="add-position" onclick="app.addPosition()">
+              + Add another card position
+            </button>
           </div>
         </div>
       </div>

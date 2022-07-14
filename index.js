@@ -7,7 +7,7 @@ app.nextStep = () => {
   return nextStep;
 };
 // FIXME Run this during onchange's to keep the next button disabled
-app.validate = (step) => {
+app.validate = () => {
   // FIXME Repeating "currentStep" is annoying, but the single source of truth is in the html until a framework like Angular is used
   const currentStep = Number(app.getStep());
   if (currentStep === 1) {
@@ -24,6 +24,21 @@ app.validate = (step) => {
   }
   // FIXME (See note above about disabling next button)
   app.nextStep();
+};
+app.addPosition = () => {
+  const newPosition = document.createElement("div");
+  newPosition.classList.add("position");
+
+  const newInput = document.createElement("input"),
+    newButton = document.createElement("button");
+  // TODO Add example question placeholders
+  newPosition.appendChild(newInput);
+  newPosition.appendChild(newButton);
+  newButton.innerHTML = "-";
+  
+  const positions = document.getElementById("positions"),
+    addPosition = document.getElementById("add-position");
+  positions.insertBefore(newPosition, addPosition);
 };
 
 console.log("Javascript file is loading properly!");
