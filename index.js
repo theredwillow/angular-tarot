@@ -19,6 +19,16 @@ app.validate = () => {
       window.alert("Please provide a spread title.");
       return;
     }
+  } else if (currentStep === 2) {
+    const positions = Array.from(
+      document.getElementsByClassName("position")
+    ).map((position) => position.querySelector("input").value);
+    if (positions.some((value) => value === "")) {
+      // FIXME Make this into an error display message element
+      window.alert("Don't leave any positions empty!");
+      return;
+    }
+    app.spread.cards = positions.map(value => ({ position: value }));
   } else {
     console.log("This step has no validation.");
   }
