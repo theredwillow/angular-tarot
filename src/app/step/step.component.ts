@@ -1,5 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { toWords } from 'number-to-words';
+import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { Step } from './step.model';
+import { nextStep } from './step.actions';
 
 @Component({
   selector: 'app-step',
@@ -7,16 +10,18 @@ import { toWords } from 'number-to-words';
   styleUrls: ['./step.component.scss']
 })
 export class StepComponent implements OnInit {
-  @Input() stepNum: number = 1;
-  stepNumWord: string = toWords(this.stepNum);
+  step$: Observable<Step>;
+  stepWord: string = 'one';
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private store: Store<{ step: Step }>) {
+    this.step$ = store.select("step");
   }
 
-  nextStep(): void {
-    // TODO Make this change state
-    console.log("The next step button has been pressed!");
+  ngOnInit(): void {
+    this.step$.subscribe(event => this.stepWord = event.word);
+  }
+
+  next(): void {
+    this.store.dispatch(nextStep());
   }
 }

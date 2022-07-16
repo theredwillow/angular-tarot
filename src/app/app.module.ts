@@ -4,17 +4,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StepComponent } from './step/step.component';
+import { StoreModule } from '@ngrx/store';
+import { stepReducer } from './step/step.reducer';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    StepComponent
-  ],
+  declarations: [AppComponent, StepComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.forRoot({
+      step: stepReducer,
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
