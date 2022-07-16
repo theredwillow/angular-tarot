@@ -84,11 +84,15 @@ app.addCard = (position) => {
 app.drawCard = async (card) => {
   // FIXME Replace this with CSS animations or something cool
   card.innerHTML = "Flipping your card!";
-  const response = await fetch("https://rws-cards-api.herokuapp.com/api/v1/cards/random?n=1")
+  const response = await fetch("https://rws-cards-api.herokuapp.com/api/v1/cards/random?n=1");
+  if (!response.ok) {
+    const message = `An error has occured: ${response.status}`;
+    throw new Error(message);
+  }
   const data = await response.json();
   const cardDrawn = data.cards[0];
   // FIXME Fix this style
-  card.innerHTML = `You drew the ${cardDrawn.name} in the ${card.dataset.position} position.<br /><br />This card symbolizes: ${cardDrawn.meaning_up}`;
+  card.innerHTML = `You drew the <b>${cardDrawn.name}</b> in the <i>${card.dataset.position}</i> position.<br /><br />This card symbolizes: ${cardDrawn.meaning_up}`;
   // FIXME card.removeEventListener("click");
 };
 
