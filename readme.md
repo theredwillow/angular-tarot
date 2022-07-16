@@ -9,6 +9,7 @@ Swagger: [Tarot Card Meanings REST API](https://app.swaggerhub.com/apis/ekswagge
 ## TO DO LIST
 
 - [ ] Convert repo to Angular
+  - [ ] Convert to universal store
 
 ## QUESTIONS TO ANSWER
 

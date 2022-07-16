@@ -22,6 +22,13 @@ export class StepComponent implements OnInit {
   }
 
   next(): void {
+    if (this.stepWord === "one") {
+      console.log("Validating title");
+    } else if (this.stepWord === "two") {
+      console.log("Validating positions");
+    } else {
+      console.log(`This shouldn't've been called. There is no such thing as the ${this.stepWord} step!`);
+    }
     this.store.dispatch(nextStep());
   }
 }
