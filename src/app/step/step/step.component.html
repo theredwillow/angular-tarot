@@ -1,0 +1,7 @@
+<div id="step-{{stepNumWord}}" class="step">
+  <div class="step-title">Step {{stepNumWord}}</div>
+  <div class="user-input">
+    <ng-content></ng-content>
+  </div>
+  <button id="next-button" (click)="nextStep()">Next</button>
+</div>
