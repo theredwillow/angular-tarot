@@ -13,4 +13,7 @@ Swagger: [Tarot Card Meanings REST API](https://app.swaggerhub.com/apis/ekswagge
 
 ## QUESTIONS TO ANSWER
 
-1. (TODO)
+1. Study [ngModel](https://angular.io/api/forms/NgModel) and [Form Control](https://angular.io/api/forms/FormControl).
+1. Learn more about [banana-in-a-box syntax and two-way binding](https://ofirrifo.medium.com/custom-angular-component-using-two-way-data-binding-aka-banana-in-a-box-syntax-9eb06b8cfb09). Is that prefered to [unidirectional downwards only](https://www.educative.io/answers/what-is-unidirectional-data-flow-in-react)?
+1. [Is Redux a bad choice for Angular?](https://www.stackchief.com/blog/Why%20you%20should%20NEVER%20use%20Redux%20with%20Angular)
+1. Is [smart/dumb component architecture](https://blog.angular-university.io/angular-2-smart-components-vs-presentation-components-whats-the-difference-when-to-use-each-and-why/) necessary in Angular?
