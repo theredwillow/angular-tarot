@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Spread } from './spread.model';
+import { SpreadService } from './spread.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-tarot';
+  public spreadTitle: Spread["title"] = this.spreadService.getSpreadTitle();
+
+  constructor(private spreadService: SpreadService) {}
 }
