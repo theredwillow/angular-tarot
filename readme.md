@@ -8,8 +8,14 @@ Swagger: [Tarot Card Meanings REST API](https://app.swaggerhub.com/apis/ekswagge
 
 ## TO DO LIST
 
-- [ ] Convert repo to Angular
-  - [ ] Convert to universal store
+App
+  if !spread.title
+    input for title
+  else if !positions.length
+    inputs for positions
+  else
+    check that cards have data
+    display cards
 
 ## QUESTIONS TO ANSWER
 
