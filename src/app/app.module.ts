@@ -6,9 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TitleInputComponent } from './title-input/title-input.component';
 import { PositionsInputComponent } from './positions-input/positions-input.component';
+import { CardFlipperComponent } from './card-flipper/card-flipper.component';
 
 @NgModule({
-  declarations: [AppComponent, TitleInputComponent, PositionsInputComponent],
+  declarations: [AppComponent, TitleInputComponent, PositionsInputComponent, CardFlipperComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
