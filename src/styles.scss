@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
+.user-input {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.input-title {
+  display: block;
+  font-weight: bold;
+}
+
+.more-info {
+  display: block;
+  font-style: italic;
+}

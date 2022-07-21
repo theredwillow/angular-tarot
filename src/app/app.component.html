@@ -1,5 +1,5 @@
 
-<app-title-input [title]="spreadTitle"></app-title-input>
+<app-title-input *ngIf="!spreadTitle"></app-title-input>
 <app-positions-input></app-positions-input>
 <app-card-flipper></app-card-flipper>
 
