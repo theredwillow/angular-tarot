@@ -1,8 +1,8 @@
-/* #next-button {
+#next-button {
   display: block;
-} */
+}
 
-/* .step {
+.step {
   display: none;
 }
 
@@ -16,16 +16,16 @@
 
 [data-step="3"] #step-three {
   display: inline-block;
-} */
+}
 
-/* .user-input {
+.user-input {
   border: 1px solid black;
   border-radius: 5px;
   padding: 10px;
   margin: 5px;
-} */
+}
 
-/* .input-title {
+.input-title {
   display: block;
   font-weight: bold;
 }
@@ -33,7 +33,7 @@
 .more-info {
   display: block;
   font-style: italic;
-} */
+}
 
 #positions {
   margin: 5px;

@@ -1,11 +1,11 @@
-// const app = document.getElementById("app");
-// app.getStep = () => Number(app.getAttribute("data-step"));
-// app.nextStep = () => {
-//   const currentStep = Number(app.getStep()),
-//     nextStep = currentStep + 1;
-//   app.setAttribute("data-step", nextStep);
-//   return nextStep;
-// };
+const app = document.getElementById("app");
+app.getStep = () => Number(app.getAttribute("data-step"));
+app.nextStep = () => {
+  const currentStep = Number(app.getStep()),
+    nextStep = currentStep + 1;
+  app.setAttribute("data-step", nextStep);
+  return nextStep;
+};
 // FIXME Run this during onchange's to keep the next button disabled
 app.validate = () => {
   // FIXME Repeating "currentStep" is annoying, but the single source of truth is in the html until a framework like Angular is used
