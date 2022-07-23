@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-positions-input',
@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./positions-input.component.scss']
 })
 export class PositionsInputComponent implements OnInit {
+  @Input() title: string = "Untitled";
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }

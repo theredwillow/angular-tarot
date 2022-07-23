@@ -1,5 +1,4 @@
 import { Action } from '@ngrx/store';
-import { Spread } from '../models/spread.model';
 
 export enum SpreadActionType {
   SET_TITLE = '[SPREAD] Set Title',
@@ -10,7 +9,7 @@ export class SetTitleAction implements Action {
 
   //add an optional payload
 
-  constructor(public payload: Spread) {}
+  constructor(public payload: string) {}
 }
 
 export type SpreadAction = SetTitleAction;

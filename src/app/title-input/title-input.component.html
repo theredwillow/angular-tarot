@@ -8,6 +8,7 @@
       questions like "What is my next step?", "What do I have to change?",
       and "How can I change this?".
     </span>
-    <input id="spread-title" type="text" placeholder="Next Step in Life" />
+    <input #spreadTitle id="spread-title" type="text" placeholder="Next Step in Life" />
+    <button id="next-button" (click)="setTitle(spreadTitle.value)">Next</button>
   </div>
 </div>
