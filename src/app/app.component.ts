@@ -20,10 +20,10 @@ export class AppComponent {
     private stepService: StepService,
     private spreadService: SpreadService,
   ) {
-    this.stepSubscription = this.stepService.onNextStep().subscribe(
+    this.stepSubscription = this.stepService.getStep().subscribe(
       (value) => (this.step = value)
     );
-    this.spreadSubscription = this.spreadService.onSetTitle().subscribe(
+    this.spreadSubscription = this.spreadService.getSpread().subscribe(
       (value) => (this.spread = value)
     );
   }

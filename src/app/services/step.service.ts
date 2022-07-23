@@ -11,13 +11,13 @@ export class StepService {
 
   constructor() { }
 
+  getStep(): Observable<any> {
+    return this.subject.asObservable();
+  }
+
   nextStep(): void {
     this.step = this.step + 1;
     this.subject.next(this.step);
-  }
-
-  onNextStep(): Observable<any> {
-    return this.subject.asObservable();
   }
 
   // TODO prevStep(): void { }

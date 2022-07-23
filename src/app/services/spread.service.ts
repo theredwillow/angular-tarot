@@ -17,12 +17,12 @@ export class SpreadService {
 
   constructor() { }
 
+  getSpread(): Observable<any> {
+    return this.subject.asObservable();
+  }
+
   setTitle(title: string): void {
     this.spread.title = title;
     this.subject.next(this.spread);
-  }
-
-  onSetTitle(): Observable<any> {
-    return this.subject.asObservable();
   }
 }
