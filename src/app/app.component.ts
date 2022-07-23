@@ -11,11 +11,13 @@ import { AppState } from './store/models/app-state.model';
 })
 export class AppComponent implements OnInit {
   title = 'angular-tarot';
+  step$!: Observable<number>;
   spread$!: Observable<Spread>;
 
   constructor(private store: Store<AppState>) { }
 
   ngOnInit(): void {
+    this.step$ = this.store.select((store) => store.step);
     this.spread$ = this.store.select((store) => store.spread);
   }
 }
