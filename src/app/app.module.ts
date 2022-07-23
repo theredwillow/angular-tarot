@@ -8,7 +8,6 @@ import { TitleInputComponent } from './title-input/title-input.component';
 import { PositionsInputComponent } from './positions-input/positions-input.component';
 import { CardFlipperComponent } from './card-flipper/card-flipper.component';
 import { SpreadReducer } from './store/reducers/spread.reducer';
-import { StepReducer } from './store/reducers/step.reducer';
 import { StoreModule } from '@ngrx/store';
 import { CommonModule } from '@angular/common';
 
@@ -20,7 +19,6 @@ import { CommonModule } from '@angular/common';
     AppRoutingModule,
     FormsModule,
     StoreModule.forRoot({
-      step: StepReducer,
       spread: SpreadReducer,
     }),
   ],
