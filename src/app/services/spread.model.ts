@@ -20,5 +20,5 @@ export interface Card extends Partial<RwsTarotCard> {
 export interface Spread {
   /** @example "Next Steps in Life" */
   title: string;
-  cards?: Card[];
+  cards: Card[];
 }

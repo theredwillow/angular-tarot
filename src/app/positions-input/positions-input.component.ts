@@ -1,34 +1,39 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Component, Input } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { Spread } from '../services/spread.model';
+import { initialState, SpreadService } from '../services/spread.service';
 
 @Component({
   selector: 'app-positions-input',
   templateUrl: './positions-input.component.html',
   styleUrls: ['./positions-input.component.scss']
 })
-export class PositionsInputComponent implements OnInit {
-  @Input() title: string = "Untitled";
-  positions$: Observable<string[]> = of([
-    "What will be your next step?",
-    "What tools do you have at your disposal?"
-  ]);
+export class PositionsInputComponent {
+  spread: Spread = initialState;
+  spreadSubscription: Subscription;
 
-  constructor() { }
+  constructor(private spreadService: SpreadService) {
+    this.spreadSubscription = this.spreadService.getSpread().subscribe(
+      (value) => (this.spread = value)
+    );
+    // Creates the first input uniformly
+    this.addPosition();
+  }
 
-  ngOnInit(): void {
-    this.positions$.subscribe(next => {});
+  ngOnDestroy() {
+    this.spreadSubscription.unsubscribe();
   }
 
   addPosition(): void {
-    console.log("You're adding a new position.");
+    this.spreadService.addPosition();
   }
 
   updatePosition(e: Event, i: number) {
     const target = e.target as HTMLInputElement;
-    // this.positions$[i] = target?.value;
+    this.spreadService.updatePosition(i, target!.value);
   }
 
   removePosition(i: number): void {
-    console.log(`You're removing the ${i}th position.`);
+    this.spreadService.removePosition(i);
   }
 }
