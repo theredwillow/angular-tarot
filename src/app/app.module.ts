@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { TitleInputComponent } from './title-input/title-input.component';
 import { PositionsInputComponent } from './positions-input/positions-input.component';
 import { CardFlipperComponent } from './card-flipper/card-flipper.component';
+import { SpreadReducer } from './store/reducers/spread.reducer';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [AppComponent, TitleInputComponent, PositionsInputComponent, CardFlipperComponent],
@@ -14,6 +16,9 @@ import { CardFlipperComponent } from './card-flipper/card-flipper.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    StoreModule.forRoot({
+      spread: SpreadReducer,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

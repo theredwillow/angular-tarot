@@ -1,15 +1,21 @@
-import { Component } from '@angular/core';
-import { Spread } from './spread.model';
-import { SpreadService } from './spread.service';
+import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { Spread } from './store/models/spread.model';
+import { AppState } from './store/models/app-state.model';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'angular-tarot';
-  public spreadTitle: Spread["title"] = this.spreadService.getSpreadTitle();
+  spread$!: Observable<Spread>;
 
-  constructor(private spreadService: SpreadService) {}
+  constructor(private store: Store<AppState>) { }
+
+  ngOnInit(): void {
+    this.spread$ = this.store.select((store) => store.spread);
+  }
 }
