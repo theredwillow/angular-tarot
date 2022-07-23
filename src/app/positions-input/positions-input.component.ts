@@ -25,7 +25,7 @@ export class PositionsInputComponent implements OnInit {
 
   updatePosition(e: Event, i: number) {
     const target = e.target as HTMLInputElement;
-    this.positions$[i] = target?.value;
+    // this.positions$[i] = target?.value;
   }
 
   removePosition(i: number): void {

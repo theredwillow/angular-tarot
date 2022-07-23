@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { Observable, Subscription } from 'rxjs';
-import { Spread } from './store/models/spread.model';
-import { AppState } from './store/models/app-state.model';
+import { Component } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { Spread } from './services/spread.model';
+import { SpreadService } from './services/spread.service';
 import { StepService } from './services/step.service';
 
 @Component({
@@ -10,26 +9,27 @@ import { StepService } from './services/step.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'angular-tarot';
   step: number = 1;
   stepSubscription: Subscription;
-  spread$!: Observable<Spread>;
+  spread!: Spread;
+  spreadSubscription: Subscription;
 
   constructor(
     private stepService: StepService,
-    private store: Store<AppState>
+    private spreadService: SpreadService,
   ) {
     this.stepSubscription = this.stepService.onNextStep().subscribe(
       (value) => (this.step = value)
     );
-  }
-
-  ngOnInit(): void {
-    this.spread$ = this.store.select((store) => store.spread);
+    this.spreadSubscription = this.spreadService.onSetTitle().subscribe(
+      (value) => (this.spread = value)
+    );
   }
 
   ngOnDestroy() {
     this.stepSubscription.unsubscribe();
+    this.spreadSubscription.unsubscribe();
   }
 }

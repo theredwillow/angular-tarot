@@ -1,6 +1,6 @@
 
 <app-title-input *ngIf="step === 1"></app-title-input>
-<app-positions-input *ngIf="step === 2" [title]="(spread$ | async)?.title"></app-positions-input>
+<app-positions-input *ngIf="step === 2" [title]="spread.title"></app-positions-input>
 <app-card-flipper></app-card-flipper>
 
 <router-outlet></router-outlet>
