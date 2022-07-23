@@ -10,10 +10,12 @@ import { CardFlipperComponent } from './card-flipper/card-flipper.component';
 import { SpreadReducer } from './store/reducers/spread.reducer';
 import { StepReducer } from './store/reducers/step.reducer';
 import { StoreModule } from '@ngrx/store';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent, TitleInputComponent, PositionsInputComponent, CardFlipperComponent],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
