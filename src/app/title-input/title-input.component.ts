@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { AppState } from '../store/models/app-state.model';
-import { SetTitleAction } from '../store/actions/spread.action';
+import { Component } from '@angular/core';
+import { SpreadService } from '../services/spread.service';
 import { StepService } from '../services/step.service';
 
 @Component({
@@ -9,11 +7,8 @@ import { StepService } from '../services/step.service';
   templateUrl: './title-input.component.html',
   styleUrls: ['./title-input.component.scss']
 })
-export class TitleInputComponent implements OnInit {
-  constructor(private stepService: StepService, private store: Store<AppState>) {}
-
-  ngOnInit(): void {
-  }
+export class TitleInputComponent {
+  constructor(private stepService: StepService, private spreadService: SpreadService) {}
 
   setTitle(title: string) {
     // FIXME
@@ -21,7 +16,7 @@ export class TitleInputComponent implements OnInit {
       window.alert("You need to provide a title for your spread!");
       return;
     }
-    this.store.dispatch(new SetTitleAction(title));
+    this.spreadService.setTitle(title);
     this.stepService.nextStep();
   }
 }
