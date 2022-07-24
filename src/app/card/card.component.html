@@ -1,12 +1,15 @@
 <!-- FIXME Add card flipping animation -->
 
-<div class="card face-down" (click)="flipCard()" *ngIf="!card.isFaceUp">
-  This is the back side of your "<i>{{ card.position }}</i>" card.
-</div>
+<div class="position">
+  <div class="position-name">{{ card.position }}</div>
 
-<div class="card face-up" *ngIf="card.isFaceUp">
-  You drew the <b>{{ card.name }}</b> in the
-  <i>{{ card.position }}</i> position.<br />
-  <br />
-  This card symbolizes: {{ card.meaning_up }}
+  <div class="card face-down" (click)="flipCard()" *ngIf="!card.isFaceUp">
+    This is the back side of this card. Click here to flip it over!
+  </div>
+  
+  <div class="card face-up" *ngIf="card.isFaceUp">
+    <div class="card-name">{{ card.name }}</div>
+    <br />
+    This card symbolizes: {{ card.meaning_up }}
+  </div>
 </div>

@@ -1,9 +1,20 @@
+.position {
+  display: inline-block;
+  background-color: paleturquoise;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.position-name {
+  font-weight: bold;
+}
+
 .card {
   border: 1px solid black;
   border-radius: 5px;
   height: 250px;
   width: 150px;
-  display: inline-block;
   margin: 5px;
   padding: 10px;
   overflow: auto;
@@ -11,4 +22,8 @@
 
 .card.face-down {
   cursor: pointer;
+}
+
+.card-name {
+  font-weight: bold;
 }
