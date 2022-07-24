@@ -1,6 +1,9 @@
 
 <app-title-input *ngIf="step === 1"></app-title-input>
+<app-spread-picker *ngIf="step === 1"></app-spread-picker>
+
 <app-positions-input *ngIf="step === 2" [title]="spread.title"></app-positions-input>
+
 <app-card-flipper *ngIf="step === 3"></app-card-flipper>
 
 <router-outlet></router-outlet>

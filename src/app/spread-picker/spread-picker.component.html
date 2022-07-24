@@ -1,0 +1,11 @@
+<div class="step">
+  <h1>Or select from a pre-made one below!</h1>
+  <div class="pre-made-spreads">
+    <div *ngFor="let spread of premadeSpreads;" class="spread" (click)="selectSpread(spread);">
+      <b>The "<i>{{spread.title}}</i>" Spread</b>
+      <div *ngFor="let p of spread.cards; let i = index;" class="position">
+        {{i + 1}}. {{p.position}}
+      </div>
+    </div>
+  </div>
+</div>

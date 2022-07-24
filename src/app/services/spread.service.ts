@@ -29,6 +29,11 @@ export class SpreadService {
     return this.subject.asObservable();
   }
 
+  setSpread(spread: Spread): void {
+    this.spread = spread;
+    this.subject.next(this.spread);
+  }
+
   setTitle(title: string): void {
     this.spread.title = title;
     this.subject.next(this.spread);
@@ -56,6 +61,8 @@ export class SpreadService {
       nhits: number
     }
     const req = this.http.get<TarotReq>(`${API_URL}?n=${numOfCards}`);
+    // FIXME Add isLoading state
+    // FIXME Catch statement
     req.subscribe((data) => {
       this.spread.cards = this.spread.cards.map((card, i) => ({
         // FIXME HAS to be unique

@@ -29,6 +29,5 @@ export class CardComponent {
   flipCard() {
     // FIXME i can't be optional
     this.spreadService.flipCard(this.card.i || 0);
-    console.log(`You're flipping the ${this.card.position} card!`, this.card);
   }
 }

@@ -10,6 +10,7 @@ import { CardFlipperComponent } from './card-flipper/card-flipper.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { CardComponent } from './card/card.component';
+import { SpreadPickerComponent } from './spread-picker/spread-picker.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { CardComponent } from './card/card.component';
     PositionsInputComponent,
     CardFlipperComponent,
     CardComponent,
+    SpreadPickerComponent,
   ],
   imports: [
     CommonModule,
