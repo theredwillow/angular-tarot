@@ -1,0 +1,10 @@
+<div class="card face-down" (click)="flipCard()" *ngIf="!card.isFaceUp">
+  This is the back side of your "<i>{{ card.position }}</i>" card.
+</div>
+
+<div class="card face-up" *ngIf="card.isFaceUp">
+  You drew the <b>{{ card.name }}</b> in the
+  <i>{{ card.position }}</i> position.<br />
+  <br />
+  This card symbolizes: {{ card.meaning_up }}
+</div>

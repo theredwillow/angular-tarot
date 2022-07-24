@@ -11,9 +11,11 @@ export interface RwsTarotCard {
 }
 
 export interface Card extends Partial<RwsTarotCard> {
-//   /** @example "What tools will you need to accomplish this goal?" */
+  /** @example "What tools will you need to accomplish this goal?" */
   position: string;
   isFaceUp: boolean;
+  /** Unique index of card/position, used for performing actions */
+  i?: number;
 }
 
 /** A tarot spread. */

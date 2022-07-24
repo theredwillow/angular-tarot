@@ -27,6 +27,6 @@ export class CardFlipperComponent {
   }
 
   flipCard(i: number) {
-    
+    this.spreadService.flipCard(i);
   }
 }

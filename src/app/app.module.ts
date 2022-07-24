@@ -9,15 +9,22 @@ import { PositionsInputComponent } from './positions-input/positions-input.compo
 import { CardFlipperComponent } from './card-flipper/card-flipper.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
-  declarations: [AppComponent, TitleInputComponent, PositionsInputComponent, CardFlipperComponent],
+  declarations: [
+    AppComponent,
+    TitleInputComponent,
+    PositionsInputComponent,
+    CardFlipperComponent,
+    CardComponent,
+  ],
   imports: [
     CommonModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

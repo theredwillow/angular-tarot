@@ -58,10 +58,17 @@ export class SpreadService {
     const req = this.http.get<TarotReq>(`${API_URL}?n=${numOfCards}`);
     req.subscribe((data) => {
       this.spread.cards = this.spread.cards.map((card, i) => ({
+        // FIXME HAS to be unique
+        i,
         ...card,
         ...data.cards[i]
       }));
       this.subject.next(this.spread);
     });
+  }
+
+  flipCard(i: number): void {
+    this.spread.cards[i].isFaceUp = !this.spread.cards[i].isFaceUp;
+    this.subject.next(this.spread);
   }
 }

@@ -1,11 +1,9 @@
-<p>
-  Loading...<br />
-  You drew the Fool, that means beginnings and endings.<br />
-  (Flip this card.)<br />
-</p>
+<!-- FIXME Need a loading and error protocol -->
 
 <div id="step-three" class="step">
   <div class="step-title">Step Three</div>
   <h1>Let's read your "<i>{{spread.title}}</i>" spread!</h1>
-  <div id="cards"></div>
+  <div id="cards">
+    <app-card *ngFor="let card of spread.cards; let i = index;" [card]="card"></app-card>
+  </div>
 </div>
