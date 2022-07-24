@@ -9,6 +9,7 @@
   
   <div class="card face-up" *ngIf="card.isFaceUp">
     <div class="card-name">{{ card.name }}</div>
+    <img [src]="card.img" [alt]="card.name" />
     <br />
     This card symbolizes: {{ card.meaning_up }}
   </div>

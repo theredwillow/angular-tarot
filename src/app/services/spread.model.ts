@@ -4,6 +4,7 @@ export interface RwsTarotCard {
   name: string;
   value: string;
   value_int: number;
+  suit?: "cups" | "wands" | "swords" | "pentacles";
   type: "major" | "minor";
   meaning_up: string;
   meaning_rev: string;
@@ -16,6 +17,7 @@ export interface Card extends Partial<RwsTarotCard> {
   isFaceUp?: boolean;
   /** Unique index of card/position, used for performing actions */
   i?: number;
+  img?: string;
 }
 
 /** A tarot spread. */

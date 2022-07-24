@@ -54,6 +54,14 @@ export class SpreadService {
     this.subject.next(this.spread);
   }
 
+  // FIXME Should this be in a util file?
+  // FIXME Should this be strictly/union typed?
+  generateImgUrl(card: RwsTarotCard): string {
+    const suit = (card.suit) ? card.suit.slice(0, 1) : 'm';
+    const num = String(card.value_int).padStart(2, '0');
+    return `assets/card-img/${suit}${num}.jpg`;
+  }
+
   fetchCards(): void {
     const numOfCards = this.spread.cards.length;
     interface TarotReq {
@@ -67,6 +75,7 @@ export class SpreadService {
       this.spread.cards = this.spread.cards.map((card, i) => ({
         // FIXME HAS to be unique
         i,
+        img: this.generateImgUrl(data.cards[i]),
         ...card,
         ...data.cards[i]
       }));
