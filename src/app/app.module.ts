@@ -8,6 +8,7 @@ import { TitleInputComponent } from './title-input/title-input.component';
 import { PositionsInputComponent } from './positions-input/positions-input.component';
 import { CardFlipperComponent } from './card-flipper/card-flipper.component';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, TitleInputComponent, PositionsInputComponent, CardFlipperComponent],
@@ -16,6 +17,7 @@ import { CommonModule } from '@angular/common';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
